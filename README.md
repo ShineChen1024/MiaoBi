@@ -24,10 +24,20 @@ we are working hard to get better result, and the checkpoint will be released as
 ## MiaoBi-beta-v0.9 Chinese Example
 
 一只精致的陶瓷猫咪雕像，全身绘有精美的传统花纹，眼睛仿佛会发光。 ![](examples/fig1.png)
+
+
 动漫风格的风景画，有山脉、湖泊，也有繁华的小镇子，色彩鲜艳，光影效果明显。 ![](examples/fig2.png)
+
+
 极具真实感的复杂农村的老人肖像，黑白。 ![](examples/fig3.png)
+
+
 红烧狮子头 ![](examples/fig4.png)
+
+
 车水马龙的上海街道，春节，舞龙舞狮。 ![](examples/fig5.png)
+
+
 枯藤老树昏鸦，小桥流水人家。水墨画。 ![](examples/fig6.png)
 
 
