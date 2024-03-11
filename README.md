@@ -3,15 +3,49 @@
 
 This is the beta version of MiaoBi, a chinese text-to-image model, following the classical structure of sd-v1.5, compatible with existing mainstream plugins such as Lora, Controlnet, T2I Adapter, etc.
 
+
+## Installation
+
+1. Clone the repository
+
+```sh
+git clone https://github.com/ShineChen1024/MiaoBi.git
+```
+
+2. Create a conda environment and install the required packages
+
+```sh
+conda create -n MiaoBi-SD python==3.10
+conda activate MiaoBi-SD
+pip install torch==2.0.1 torchvision==0.15.2 numpy==1.25.1 diffusers==0.25.1 opencv-python==4.8.0  transformers==4.31.0 accelerate==0.21.0
+```
+
+3. Download checkpoints
+
+download weights from [Huggingface](https://huggingface.co/ShineChen1024/MiaoBi), and put it on checkpoints folder.
+
+## Inference
+1. python demo
+```sh
+python miaobi_generate.py
+```
+
+2. controlnet demo
+```sh
+python miaobi_controlnet.py
+```
+
 ## Diffusers
 ```py
 from diffusers import StableDiffusionPipeline
-import torch
-model_id = "AIXI-AIGC/miaobi"
-pipe = StableDiffusionPipeline.from_pretrained(model_id, torch_dtype=torch.float16)
-pipe = pipe.to("cuda")
+from transformers import AutoTokenizer
+
+tokenizer = AutoTokenizer.from_pretrained("checkpoints/miaobi_beta0.9/tokenizer",  trust_remote_code=True)
+pipe = StableDiffusionPipeline.from_pretrained("checkpoints/miaobi_beta0.9")
+
+pipe.to("cuda")
 prompt = "一只穿着铠甲的猫"
-image = pipe(prompt).images[0]  
+image = pipe(prompt).images[0]
 image.save("铠甲猫.png")
 ```
 
