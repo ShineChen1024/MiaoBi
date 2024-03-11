@@ -24,17 +24,6 @@ pip install torch==2.0.1 torchvision==0.15.2 numpy==1.25.1 diffusers==0.25.1 ope
 
 download weights from [Huggingface](https://huggingface.co/ShineChen1024/MiaoBi), and put it on checkpoints folder.
 
-## Inference
-1. python demo
-```sh
-python miaobi_generate.py
-```
-
-2. controlnet demo
-```sh
-python miaobi_controlnet.py
-```
-
 ## Diffusers
 ```py
 from diffusers import StableDiffusionPipeline
@@ -49,10 +38,16 @@ image = pipe(prompt).images[0]
 image.save("铠甲猫.png")
 ```
 
-## Weights
-权重文件将会在下周开源。
+## Inference
+1. python demo
+```sh
+python miaobi_generate.py
+```
 
-we are working hard to get better result, and the checkpoint will be released as soon as possible.
+2. controlnet demo
+```sh
+python miaobi_controlnet.py
+```
 
 
 ## MiaoBi-beta-v0.9 Chinese Example
